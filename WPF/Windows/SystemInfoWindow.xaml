@@ -24,6 +24,30 @@
 
     <ScrollViewer Padding="0" Margin="0" HorizontalScrollBarVisibility="Disabled">
         <StackPanel CanVerticallyScroll="False">
+
+            <!-- Barre de boutons en haut de la fenêtre -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="5,5,5,0">
+                <Button Content="📋 Copy All"
+                        Margin="5"
+                        Height="28"
+                        Click="CopyAll_Click"
+                        Background="{DynamicResource AccentColor}"
+                        Foreground="{DynamicResource TextColor}"
+                        BorderBrush="{DynamicResource AccentColor}"
+                        FontSize="12"/>
+
+                <Button Content="💾 Export TXT"
+                        Margin="5"
+                        Height="28"
+                        Click="ExportTxt_Click"
+                        Background="{DynamicResource AccentColor}"
+                        Foreground="{DynamicResource TextColor}"
+                        BorderBrush="{DynamicResource AccentColor}"
+                        FontSize="12"/>
+            </StackPanel>
+
             <GroupBox
                 Header="SystemInfo"
                 adonisExtensions:LayerExtension.Layer="3"
@@ -38,7 +62,8 @@
                     Focusable="False"
                     IsReadOnly="True"
                     ScrollViewer.CanContentScroll="False"
-                    IsEnabled="False" FontSize="11">
+                    IsEnabled="False"
+                    FontSize="11">
                     <DataGrid.Columns>
                         <DataGridTextColumn Width="150" Binding="{Binding Name}">
                             <DataGridTextColumn.ElementStyle>
@@ -72,23 +97,9 @@
                     Focusable="False"
                     IsReadOnly="True"
                     ScrollViewer.CanContentScroll="False"
-                    IsEnabled="False" FontSize="11">
-                    <!--DataGrid.Columns>
-                        <DataGridTextColumn Width="150" Binding="{Binding Name}">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Width="auto" Binding="{Binding Value}">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="Foreground" Value="{DynamicResource AccentTextColor}" />
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                    </DataGrid.Columns-->
+                    IsEnabled="False"
+                    FontSize="11">
+                    <!-- Colonnes générées dynamiquement dans le code-behind -->
                 </DataGrid>
             </GroupBox>
 
@@ -106,7 +117,8 @@
                     Focusable="False"
                     IsReadOnly="True"
                     ScrollViewer.CanContentScroll="False"
-                    IsEnabled="False" FontSize="11">
+                    IsEnabled="False"
+                    FontSize="11">
                     <DataGrid.Columns>
                         <DataGridTextColumn Width="150" Binding="{Binding Name}">
                             <DataGridTextColumn.ElementStyle>
@@ -156,7 +168,8 @@
                         Focusable="False"
                         IsReadOnly="True"
                         ScrollViewer.CanContentScroll="False"
-                        IsEnabled="False" FontSize="11"
+                        IsEnabled="False"
+                        FontSize="11"
                         ItemsSource="{Binding asusSensors}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="150" Binding="{Binding Name}">
